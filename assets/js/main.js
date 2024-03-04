@@ -46,7 +46,7 @@ for (let i = 0; i < team.length; i++) {
 
 // Create varaible for DOM elements that will contains the objects
 
-const containerElem = document.getElementById("our_team");
+const containerElem = document.querySelector(".row");
 
 
 // Show in screen array elements
@@ -56,17 +56,16 @@ for (let i = 0; i < team.length; i++) {
   const element = team[i];
 
   // Create varaible for the markup f the element that will be shown on screen
-
-
   const markup = `
-    <div class="col4">
-      <div class="card">
-      <p>Name: ${element.name}</p>
-      <p>Role: ${element.role}</p>
-      <img>${element.image}</img>
+    <div class="col-4">
+      <div class="card rounded-0">
+        <img src="./assets/img/${element.image}" alt="">
+        <div class="card-footer">
+          <p class="name m-0">${element.name}</p>
+          <p>${element.role}</p>
+        </div>
       </div>
-    </div>
-    `;
+    </div>`;
 
   containerElem.insertAdjacentHTML("beforeend", markup);
 
